@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresas con Crema</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;500&family=Poppins:wght@400&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    color:white;
+    overflow-x:hidden;
+    background: linear-gradient(-45deg, #000000, #1a1a1a, #2b0f1a, #000000);
+    background-size:400% 400%;
+    animation:fondo 10s ease infinite;
+}
+
+/* FONDO */
+@keyframes fondo{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:60px 20px;
+    animation:fadeUp 1s ease;
+}
+
+header h1{
+    font-family:'Playfair Display', serif;
+    font-size:3.5em;
+    color:#ff4d6d;
+    letter-spacing:3px;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 10px #ff4d6d;}
+    to{text-shadow:0 0 25px #ff4d6d;}
+}
+
+header p{
+    opacity:0.8;
+    font-size:1.2em;
+}
+
+/* ANIMACION GENERAL */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1;}
+}
+
+section{
+    padding:50px 20px;
+}
+
+h2{
+    text-align:center;
+    color:#ff4d6d;
+    font-family:'Montserrat', sans-serif;
+    animation:fadeUp 1s ease;
+}
+
+/* CARDS */
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:15px;
+    width:220px;
+    text-align:center;
+    transition:0.4s;
+    opacity:0;
+    animation:fadeUp 0.8s forwards;
+}
+
+/* DELAY PRO */
+.card:nth-child(1){animation-delay:0.2s;}
+.card:nth-child(2){animation-delay:0.4s;}
+.card:nth-child(3){animation-delay:0.6s;}
+.card:nth-child(4){animation-delay:0.8s;}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.07) rotate(1deg);
+    box-shadow:0 0 25px #ff4d6d;
+}
+
+/* TOPPINGS */
+.tag{
+    display:inline-block;
+    margin:8px;
+    padding:8px 15px;
+    border:1px solid #ff4d6d;
+    border-radius:20px;
+    transition:0.3s;
+    animation:pop 0.6s ease;
+}
+
+@keyframes pop{
+    from{transform:scale(0);}
+    to{transform:scale(1);}
+}
+
+.tag:hover{
+    background:#ff4d6d;
+    transform:scale(1.2);
+    box-shadow:0 0 10px #ff4d6d;
+}
+
+/* BOTON FINAL */
+.final-btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 40px;
+    background:#ff4d6d;
+    color:white;
+    border-radius:40px;
+    text-decoration:none;
+    font-size:1.2em;
+    transition:0.4s;
+}
+
+.final-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #ff4d6d;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    box-shadow:0 0 15px #25D366;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+}
+
+/* TOOLTIP */
+.tooltip{
+    position:absolute;
+    right:60px;
+    background:#ff4d6d;
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:12px;
+    opacity:0;
+    transform:translateX(20px);
+    transition:0.4s;
+}
+
+.whatsapp:hover .tooltip{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.whatsapp:active .tooltip{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header h1{
+        font-size:2.3em;
+    }
+
+    .card{
+        width:90%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🍓 FRESAS CON CREMA 🍓</h1>
+    <p>Postres premium para los que saben disfrutar 😏</p>
+</header>
+
+<section>
+    <h2>🍨 Sabores</h2>
+
+    <div class="container">
+        <div class="card">🍓 Fresas</div>
+        <div class="card">🍑 Durazno</div>
+        <div class="card">🍇 Uva</div>
+        <div class="card">🥕 Zanahoria con crema</div>
+    </div>
+</section>
+
+<section>
+    <h2>🍫 Toppings</h2>
+
+    <div style="text-align:center;">
+        <span class="tag">🍫 Chispas</span>
+        <span class="tag">☕ Capuchino</span>
+        <span class="tag">🍩 Chocolate</span>
+        <span class="tag">🥣 Granola</span>
+        <span class="tag">🍬 Lunetas</span>
+    </div>
+</section>
+
+<section>
+    <h2>🍯 Jarabes</h2>
+
+    <div style="text-align:center;">
+        <span class="tag">🥛 Lechera</span>
+        <span class="tag">🍫 Chocolate</span>
+    </div>
+</section>
+
+<section style="text-align:center;">
+    <h2>💸 Precios</h2>
+    <p>$25 y $35</p>
+
+    <a href="https://wa.me/525560551150" class="final-btn">Pedir ahora 💬</a>
+</section>
+
+<a href="https://wa.me/525560551150" class="whatsapp">
+    💬
+    <span class="tooltip">¡PIDE YA!</span>
+</a>
+
+</body>
+</html>
