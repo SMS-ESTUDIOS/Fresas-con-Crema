@@ -31,10 +31,12 @@ header{
 
 .big{
     font-family:'Bebas Neue', sans-serif;
-    font-size:13em;
+    font-size: clamp(4em, 12vw, 13em);
     color:#ff1a1a;
     letter-spacing:15px;
     animation:pulse 1.5s infinite;
+    text-align:center;
+    line-height:1;
 }
 
 /* PALPITAR */
@@ -136,9 +138,22 @@ h2{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-    .big{
-        font-size:2.5em;
+    header{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
     }
+
+    .small{
+        font-size:1em;
+        text-align:center;
+    }
+
+    .big{
+        letter-spacing:5px;
+    }
+
     .card{
         width:90%;
     }
